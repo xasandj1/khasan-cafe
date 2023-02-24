@@ -3,33 +3,39 @@
     top: 0;
     left: 0;
     height: 100vh;
-    width: 320px;
-    background-color: #fff;
+    width: 180px;
+    background-color: #1F1D2B;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 11;
 
     &__logo {
         display: grid;
         place-items: center;
         height: 120px;
-        font-size: 1.5rem;
-        font-weight: 700;
-        font-family: 'Mochiy Pop P one', sans-serif;
+        max-width: 300px;
     }
 
     &__menu {
         position: relative;
-
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-left: 20px;
         &__item {
             display: flex;
             align-items: center;
             place-content: flex-start;
-            padding: 1rem 3rem;
+            padding: 20px 3rem;
             font-size: 1.25rem;
             font-weight: 500;
-            color: #555555;
+            color: white;
             transition: color 0.3s ease-in-out;
 
+
             &.active {
-                color: #fff;
+                color: white;
             }
 
             &__icon {
@@ -45,12 +51,27 @@
             position: absolute;
             top: 0;
             left: 50%;
-            width: calc(100% - 40px);
+            width: 40%;
             border-radius: 10px;
-            background-color: #308efe;
+            background-color: white;
             z-index: -1;
-            transform: translateX(-50%);
+            transform: translateX(-20%);
             transition: 0.3s ease-in-out;
         }
     }
+}
+.icons {
+    height: 40px;
+    fill: #fff !important;
+    overflow: visible;
+}
+
+.icons:hover {
+    fill: white !important;
+
+}
+
+.logo {
+    height: 65px;
+    width: 100%;
 }

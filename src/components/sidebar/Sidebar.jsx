@@ -1,37 +1,46 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { images } from '../constants';
 import './sidebar.scss';
 
 const sidebarNavItems = [
     {
-        display: 'Dashboard',
-        icon: <i className='bx bx-home'></i>,
+       
+        icon: images.home,
         to: '/',
-        section: ''
+        section: 'home'
     },
     {
-        display: 'Getting Started',
-        icon: <i className='bx bx-star'></i>,
-        to: '/started',
-        section: 'started'
+       
+        icon: images.discount,
+        to: '/discount',
+        section: 'discount'
     },
     {
-        display: 'Calendar',
-        icon: <i className='bx bx-calendar'></i>,
-        to: '/calendar',
-        section: 'calendar'
+     
+        icon: images.pie,
+        to: '/pie',
+        section: 'pie'
     },
     {
-        display: 'User',
-        icon: <i className='bx bx-user'></i>,
-        to: '/user',
-        section: 'user'
+        icon: images.sms,
+        to: '/message',
+        section: 'message'
     },
     {
-        display: 'Orders',
-        icon: <i className='bx bx-receipt'></i>,
-        to: '/order',
-        section: 'order'
+        icon: images.ball,
+        to: '/ball',
+        section: 'ball'
+    },
+    {
+        icon: images.settings,
+        to: '/settings',
+        section: 'settings'
+    },
+    {
+        icon: images.logout,
+        to: '/logout',
+        section: 'logout'
     },
 ]
 
@@ -59,14 +68,14 @@ const Sidebar = () => {
 
     return <div className='sidebar'>
         <div className="sidebar__logo">
-            Animate
+            <img src={images.logo} alt="logo" className='logo'/>
         </div>
         <div ref={sidebarRef} className="sidebar__menu">
             <div
                 ref={indicatorRef}
                 className="sidebar__menu__indicator"
                 style={{
-                    transform: `translateX(-50%) translateY(${activeIndex * stepHeight}px)`
+                    transform: `translateX(-65%) translateY(${activeIndex * stepHeight}px)`
                 }}
             ></div>
             {
@@ -74,10 +83,7 @@ const Sidebar = () => {
                     <Link to={item.to} key={index}>
                         <div className={`sidebar__menu__item ${activeIndex === index ? 'active' : ''}`}>
                             <div className="sidebar__menu__item__icon">
-                                {item.icon}
-                            </div>
-                            <div className="sidebar__menu__item__text">
-                                {item.display}
+                                <img src={item.icon} alt="discount" className='icons'/>
                             </div>
                         </div>
                     </Link>
