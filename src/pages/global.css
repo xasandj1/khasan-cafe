@@ -357,3 +357,9 @@ button {
     line-height: 140%;
     color: #ABBBC2;
 }
+.btn{
+    padding: 10px;
+    border: 1px solid #EA7C69;
+    border-radius: 10px;
+    background: transparent;
+}
