@@ -20,9 +20,9 @@ const Food = () => {
                 </div>
                 <div className='cards-btn'>
                     {Cards.map((card, i) => (
-                        <div className='cadrs'>
+                        <div className='cadrs' key={i}>
                             <button className='cards-btns'>
-                                <img src={card.seafood} key={i} className="seafood" />
+                                <img src={card.seafood}  alt="allfood" className="seafood" />
                                 <div className='card-text'>
                                     <h3 className='cards-title'>{card.txt}</h3>
                                     <span className='cards-span'>{card.price}</span>

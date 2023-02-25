@@ -1,18 +1,30 @@
 import "./global.css"
-import { FiSearch } from "react-icons/fi"
+import { FiSearch,FiTrash } from "react-icons/fi"
 import { FaShoppingCart } from "react-icons/fa"
 import { HiArrowNarrowRight } from "react-icons/hi"
 import { AiOutlinePlus } from "react-icons/ai"
 import Food from "./Crads/Food";
 import { images } from "../components/constants"
-import { useState } from "react"
+import AddButton from "../components/Ul/AddButton"
+import React, { useState } from "react"
+import Button from "../components/Ul/Button"
 
 
-const Home = () => {
-    const [shop, setShop]=useState(false)
-    const menu =()=>{
-        shop()
+
+const Home = (classes) => {
+    const [shop, setShop] = useState(false)
+    const [remove,setRemove] = useState(false)
+    const orderDlete =()=>{
+        setRemove(!remove)
+        console.log();
     }
+
+
+    const openMenu = () => {
+        setShop(!shop)
+        console.log(shop);
+    }
+
     return (
         <header className="header">
             <div className="container">
@@ -37,26 +49,38 @@ const Home = () => {
                             <li><a href="#!" className="header_link">Dessert</a></li>
                         </ul>
                         <div className="shopping-icons">
-                            <button className="shopping-btn"><FaShoppingCart className="icon" /></button>
+                            <button className={`shopping-btn ${shop && 'active'}`} onClick={() => openMenu()}><FaShoppingCart className="icon" /></button>
                             <span className="spans">1</span>
                         </div>
                     </div>
                 </div>
-                <div className={`menu`}>
+                <div className={`menu ${shop && 'active'}`}>
                     <div className="menu-shopping ">
-                        <button className="menu_close"><HiArrowNarrowRight className="right" /></button>
+                        <button className="menu_close"><HiArrowNarrowRight className={`right ${shop && 'active'}`} onClick={() => openMenu()} /></button>
                         <div className="add-people">
                             <div className="menu_info">
                                 <h1 className="menu_title">Confirmation</h1>
                                 <span className="menu_span">Orders #34562</span>
                             </div>
-                            <button className="menu_plus"><AiOutlinePlus /></button>
+                            <AddButton className={classes}><AiOutlinePlus /></AddButton>
                         </div>
-                        <div className="order">
-                            <img src={images.seafood} className="order-img"/>
-                            <div className="order_name">
-                                <h5>Spicy seasoned sea...</h5>
-                                <span>$ 2.29</span>
+                        <div className={`order ${remove && 'close'}`}>
+                            <div>
+                            <div className="orders_info-top">
+                                <img src={images.seafood} className="order-img" alt="allfood" />
+                                <div className="order_info">
+                                    <h5 className="order-name">Spicy seasoned sea...</h5>
+                                    <span className="order_price">$ 2.29</span>
+                                </div>
+                                    <div className="orders_prices">
+                                        <span className="order_amount">2</span>
+                                        <span className="order-price">$ 4,58</span>
+                                    </div>
+                            </div>
+                            <div className="order_bottom">
+                                <input type="text" placeholder="Order Note..." className="order-info"/>
+                                <Button className={`classes ${remove && 'close'}`} click={()=>orderDlete()}>{<FiTrash/>}</Button>
+                            </div>
                             </div>
                         </div>
                     </div>

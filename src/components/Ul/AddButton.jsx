@@ -4,7 +4,7 @@ import "../../pages/global.css"
 
 const Button = ({ children, classes, type, disable, click }) => {
   return (
-    <button className={`btn ${classes}`} type={type} disabled={disable} onClick={click}>{children}</button>
+    <button className={`add-btn ${classes}`} type={type} disabled={disable} onClick={click}>{children}</button>
   )
 }
 Button.defaultProps = {

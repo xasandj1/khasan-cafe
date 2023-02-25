@@ -296,7 +296,8 @@ button {
     color: #ABBBC2;
     margin-top: 8px;
 }
-.menu{
+
+.menu {
     position: fixed;
     right: -100%;
     top: 0;
@@ -306,17 +307,19 @@ button {
     transition: 0.9s;
     z-index: 12;
 }
+
 .menu-shopping {
     position: absolute;
     right: 0;
     background: #1F1D2B;
     height: 100%;
-    width: 30%;
+    width: 35%;
     z-index: 10;
-    border-radius: 15px;
+    border-radius: 15px 0px 0px 15px;
     padding: 14px 15px;
 }
-.active{
+
+.active {
     right: 0;
 }
 
@@ -333,7 +336,7 @@ button {
     border-bottom: 2px solid #393C49;
 }
 
-.menu_plus {
+.add-btn {
     background: #E07153;
     color: #ffff;
     padding: 10px;
@@ -351,15 +354,111 @@ button {
     color: #FFFFFF;
     margin-bottom: 18px;
 }
-.menu_span{
+
+.menu_span {
     font-weight: 500;
     font-size: 16px;
     line-height: 140%;
     color: #ABBBC2;
 }
-.btn{
-    padding: 10px;
+
+.btn {
+    padding: 15px;
     border: 1px solid #EA7C69;
     border-radius: 10px;
+    font-size: 20px;
     background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #E07153;
+    margin-left: 20px;
+}
+
+.order {
+    display: flex;
+    margin-top: 20px;
+    flex-direction: column;
+}
+.close{
+    display: none;
+}
+
+.orders_info-top {
+    display: flex;
+    align-items: center;
+
+}
+
+.order_info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.orders_prices {
+    display: flex;
+    align-items: center;
+}
+
+.orders_prices {
+    margin-left: 100px;
+}
+
+.order-name {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 130%;
+    color: #FFFFFF;
+}
+
+.order_price {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 140%;
+    color: #ABBBC2;
+    margin-top: 5px;
+}
+
+.order-price {
+    font-weight: 500;
+    font-size: 15px;
+    color: #FFFFFF;
+    margin-left: 20px;
+}
+
+.order_amount {
+    background: #2D303E;
+    border: 1px solid #393C49;
+    border-radius: 10px;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 18px;
+    color: #FFFFFF;
+}
+
+.order_bottom {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.order-info {
+    background: #2D303E;
+    border: 1px solid #393C49;
+    border-radius: 5px;
+    height: 50px;
+    width: 390px;
+    padding-left: 10px;
+    outline: none;
+    color: white;
+    font-size: 15px;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
