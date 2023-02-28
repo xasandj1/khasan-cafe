@@ -1,5 +1,5 @@
 import React from 'react'
-import "../global.css"
+import "../Css/global.css"
 import { BsChevronDown } from "react-icons/bs"
 import Cards from './Const'
 const Food = () => {

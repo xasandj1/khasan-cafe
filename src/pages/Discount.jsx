@@ -1,4 +1,4 @@
-import "./global.css"
+import "../pages/Css/global.css"
 
 
 const Discount = () => {

@@ -1,4 +1,4 @@
-import "./global.css"
+import "../pages/Css/global.css"
 import { FiSearch,FiTrash } from "react-icons/fi"
 import { FaShoppingCart } from "react-icons/fa"
 import { HiArrowNarrowRight } from "react-icons/hi"

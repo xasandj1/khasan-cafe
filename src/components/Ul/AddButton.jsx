@@ -1,6 +1,6 @@
 import React from 'react'
 import ProTyeps from "prop-types"
-import "../../pages/global.css"
+import "../../pages/Css/global.css"
 
 const Button = ({ children, classes, type, disable, click }) => {
   return (
