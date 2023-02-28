@@ -89,6 +89,10 @@ button {
     border: 1px solid #393C49;
     border-radius: 5px;
     background: #2D303E;
+    color: #ffff;
+    text-transform: capitalize;
+}
+.header-input::placeholder{
     color: #ABBBC2;
 }
 
@@ -135,10 +139,14 @@ button {
 .spans {
     background: #E07153;
     border-radius: 50%;
-    padding: 0px 5px;
+    padding: 1px 5px;
     position: absolute;
     top: -25%;
     right: -22%;
+    color: #E0E6E9;
+    text-shadow: 0 0 10px white;
+    font-weight: 400;
+    font-size: 15px;
 }
 
 .header_list {
@@ -267,15 +275,15 @@ button {
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    height: 37vh;
     width: 205px;
+    margin-top: 37%;
 }
 
 .cards-title {
     font-weight: 500;
     font-size: 18px;
     color: #FFFFFF;
-    max-width: 140px;
+    max-width: 178px;
     width: 100%;
     text-align: center;
 }
@@ -380,7 +388,8 @@ button {
     margin-top: 20px;
     flex-direction: column;
 }
-.close{
+
+.close {
     display: none;
 }
 

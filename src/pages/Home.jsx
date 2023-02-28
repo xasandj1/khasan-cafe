@@ -6,14 +6,18 @@ import { AiOutlinePlus } from "react-icons/ai"
 import Food from "./Crads/Food";
 import { images } from "../components/constants"
 import AddButton from "../components/Ul/AddButton"
-import React, { useState } from "react"
+import React, {useState} from "react"
 import Button from "../components/Ul/Button"
 
 
 
-const Home = (classes) => {
+const Home = () => {
+    const {text,setText} = useState("")
     const [shop, setShop] = useState(false)
     const [remove,setRemove] = useState(false)
+    const searchChange = (e)=>{
+        setText(e.target.value)
+    }
     const orderDlete =()=>{
         setRemove(!remove)
         console.log();
@@ -35,7 +39,7 @@ const Home = (classes) => {
                             <p className="header-txt">Tuesday, 21 Feb 2023 Developing by XT</p>
                         </div>
                         <div className="header_serachs">
-                            <input placeholder="Search for food, coffe, etc.." className="header-input" />
+                            <input placeholder="Search for food, coffe, etc.." className="header-input" value={text} onChange={searchChange}/>
                             <FiSearch className="header_search" />
                         </div>
                     </div>
@@ -50,7 +54,7 @@ const Home = (classes) => {
                         </ul>
                         <div className="shopping-icons">
                             <button className={`shopping-btn ${shop && 'active'}`} onClick={() => openMenu()}><FaShoppingCart className="icon" /></button>
-                            <span className="spans">1</span>
+                            <span className="spans">0</span>
                         </div>
                     </div>
                 </div>
@@ -62,7 +66,7 @@ const Home = (classes) => {
                                 <h1 className="menu_title">Confirmation</h1>
                                 <span className="menu_span">Orders #34562</span>
                             </div>
-                            <AddButton className={classes}><AiOutlinePlus /></AddButton>
+                            <AddButton classes={`add-btn`}><AiOutlinePlus /></AddButton>
                         </div>
                         <div className={`order ${remove && 'close'}`}>
                             <div>
