@@ -1,0 +1,24 @@
+@media (max-width: 1440px) {
+    .sidebar {
+        position: absolute !important;
+        height: unset !important;
+    }
+    .sidebar__menu__item{
+        margin-top: 10px;
+    }
+    .sidebar__menu__indicator{
+        transform: translateX(-65%) translateY(9px) !important;
+    }
+   
+}
+@media (max-width: 1024px) {
+    .sidebar{
+        display: none !important;
+    }
+    .menuBtn{
+        display: flex !important;
+    }
+    .btn {
+        margin-left: unset !important;
+    }
+}

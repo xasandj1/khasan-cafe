@@ -1,5 +1,8 @@
 import { images } from "../../components/constants"
 
+// const []
+
+
 const Cards = [
     {
         seafood: images.seafood,
@@ -28,7 +31,7 @@ const Cards = [
     {
         seafood: images.spinachfood,
         txt:"Healthy noodle with spinach leaf",
-        price:"$ $ 3.29",
+        price:"$ 3.29",
         bowls:"22 Bowls available"
     },
     {

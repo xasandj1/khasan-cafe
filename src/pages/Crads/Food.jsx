@@ -1,9 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "../Css/global.css"
 import { BsChevronDown } from "react-icons/bs"
 import Cards from './Const'
-const Food = () => {
-
+const Food = (props) => {
     return (
         <section className='food'>
             <div className='food-content'>
@@ -21,8 +20,8 @@ const Food = () => {
                 <div className='cards-btn'>
                     {Cards.map((card, i) => (
                         <div className='cadrs' key={i}>
-                            <button className='cards-btns'>
-                                <img src={card.seafood}  alt="allfood" className="seafood" />
+                            <button className='cards-btns' onClick={() => props.hendleChange()}>
+                                <img src={card.seafood} alt="allfood" className="seafood" />
                                 <div className='card-text'>
                                     <h3 className='cards-title'>{card.txt}</h3>
                                     <span className='cards-span'>{card.price}</span>
@@ -30,7 +29,8 @@ const Food = () => {
                                 </div>
                             </button>
                         </div>
-                    ))}</div>
+                    ))}
+                </div>
             </div>
         </section>
     )

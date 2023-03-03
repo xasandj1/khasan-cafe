@@ -1,45 +1,49 @@
 import "../pages/Css/global.css"
-import { FiSearch,FiTrash } from "react-icons/fi"
+import { FiSearch } from "react-icons/fi"
 import { FaShoppingCart } from "react-icons/fa"
 import { HiArrowNarrowRight } from "react-icons/hi"
+import { RiMenu2Line } from "react-icons/ri"
 import { AiOutlinePlus } from "react-icons/ai"
 import Food from "./Crads/Food";
-import { images } from "../components/constants"
 import AddButton from "../components/Ul/AddButton"
-import React, {useState} from "react"
+import React, { useState } from "react"
 import Button from "../components/Ul/Button"
+import AddMenu from "./AddMenu/AddOrder"
 
 
 
 const Home = () => {
-    const {text,setText} = useState("")
+    const { text, setText } = useState("")
     const [shop, setShop] = useState(false)
-    const [remove,setRemove] = useState(false)
-    const searchChange = (e)=>{
+    const [menu, setMenu] = useState(false)
+    const [price, setPrice] = useState(0)
+    const hendleChange = () => (
+        setPrice(price + 1)   
+    )
+    const menuOpen = () => {
+        setMenu(!menu)
+    }
+    const searchChange = (e) => {
         setText(e.target.value)
     }
-    const orderDlete =()=>{
-        setRemove(!remove)
-        console.log();
-    }
+   
 
 
     const openMenu = () => {
         setShop(!shop)
-        console.log(shop);
     }
-
     return (
         <header className="header">
             <div className="container">
                 <div className="header_info">
                     <div className="header_top">
+                        <Button classes={`menuBtn ${menu && "left_menu"}`} onClick={() => menuOpen()}><RiMenu2Line /></Button>
                         <div className="header_top-links">
                             <h1 className="header_title">Khasan Resto</h1>
                             <p className="header-txt">Tuesday, 21 Feb 2023 Developing by XT</p>
                         </div>
                         <div className="header_serachs">
-                            <input placeholder="Search for food, coffe, etc.." className="header-input" value={text} onChange={searchChange}/>
+                            <input placeholder="Search for food, coffe, etc.." className="header-input" value={text} onChange={()=>searchChange} />
                             <FiSearch className="header_search" />
                         </div>
                     </div>
@@ -54,12 +58,12 @@ const Home = () => {
                         </ul>
                         <div className="shopping-icons">
                             <button className={`shopping-btn ${shop && 'active'}`} onClick={() => openMenu()}><FaShoppingCart className="icon" /></button>
-                            <span className="spans">0</span>
+                            <span className="spans">{price}</span>
                         </div>
                     </div>
                 </div>
                 <div className={`menu ${shop && 'active'}`}>
-                    <div className="menu-shopping ">
+                    <div className="menu-shopping">
                         <button className="menu_close"><HiArrowNarrowRight className={`right ${shop && 'active'}`} onClick={() => openMenu()} /></button>
                         <div className="add-people">
                             <div className="menu_info">
@@ -68,28 +72,10 @@ const Home = () => {
                             </div>
                             <AddButton classes={`add-btn`}><AiOutlinePlus /></AddButton>
                         </div>
-                        <div className={`order ${remove && 'close'}`}>
-                            <div>
-                            <div className="orders_info-top">
-                                <img src={images.seafood} className="order-img" alt="allfood" />
-                                <div className="order_info">
-                                    <h5 className="order-name">Spicy seasoned sea...</h5>
-                                    <span className="order_price">$ 2.29</span>
-                                </div>
-                                    <div className="orders_prices">
-                                        <span className="order_amount">2</span>
-                                        <span className="order-price">$ 4,58</span>
-                                    </div>
-                            </div>
-                            <div className="order_bottom">
-                                <input type="text" placeholder="Order Note..." className="order-info"/>
-                                <Button className={`classes ${remove && 'close'}`} click={()=>orderDlete()}>{<FiTrash/>}</Button>
-                            </div>
-                            </div>
-                        </div>
+                        <AddMenu hendleChange={hendleChange} price={price}/>
                     </div>
                 </div>
-                <Food />
+                <Food hendleChange={hendleChange} />
             </div>
         </header>
     )
