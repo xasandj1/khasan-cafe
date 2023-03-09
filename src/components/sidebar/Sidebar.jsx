@@ -46,10 +46,6 @@ const sidebarNavItems = [
 ]
 
 const Sidebar = () => {
-    const [menu,setMenu] = useState(true)
-    const menuOpen = ()=>{
-        setMenu(!menu)
-    }
     const [activeIndex, setActiveIndex] = useState(0);
     const [stepHeight, setStepHeight] = useState(0);
     const sidebarRef = useRef();
@@ -71,7 +67,8 @@ const Sidebar = () => {
         setActiveIndex(curPath.length === 0 ? 0 : activeItem);
     }, [location]);
 
-    return <div className={`sidebar ${menu && "left_menu"}`} onClick={()=>menuOpen}>
+
+    return <div className={`sidebar ${"left_menu"}`}>
         <div className="sidebar__logo">
             <img src={images.logo} alt="logo" className='logo'/>
         </div>

@@ -92,7 +92,8 @@ button {
     color: #ffff;
     text-transform: capitalize;
 }
-.header-input::placeholder{
+
+.header-input::placeholder {
     color: #ABBBC2;
 }
 
@@ -254,7 +255,7 @@ button {
 .cards-btn {
     gap: 20px;
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .cadrs:hover {
@@ -470,9 +471,91 @@ button {
     align-items: center;
     justify-content: center;
 }
-.menuBtn{
+
+.menuBtn {
     display: none;
 }
-.left_menu{
+
+.left_menu {
     display: flex !important;
+}
+
+.pie-content {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #393C49;
+}
+
+.pie {
+    margin-top: 20px;
+}
+
+.pie-content_bottom {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.pie_cards{
+    width: 30%;
+    background: #1F1D2B;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.pie-bottom_card {
+    display: flex;
+    align-items: center;
+}
+
+.title_icon {
+    background: #252836;
+    padding: 10px;
+    width: 43px;
+    border-radius: 8px;
+}
+
+.pie_icon {
+    color: #9288E0;
+    font-size: 25px;
+}
+
+.bottom_span {
+    font-weight: 500;
+    font-size: 20px;
+    color: #50D1AA;
+    margin-left: 15px;
+}
+
+.buttom_up {
+    background: rgba(136, 224, 145, 0.24);
+    color: #50D1AA;
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+}
+
+.pie-bottom_price {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.pie-bottom_span {
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 140%;
+    color: #FFFFFF;
+    margin-top: 10px;
+}
+
+.pie_txt {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 130%;
+    color: #ABBBC2;
+    margin-top: 10px;
 }
