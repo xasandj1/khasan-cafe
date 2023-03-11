@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { images } from '../constants';
-import "../../pages/Css/media.css"
 import './sidebar.scss';
 
 const sidebarNavItems = [
@@ -67,8 +66,7 @@ const Sidebar = () => {
         setActiveIndex(curPath.length === 0 ? 0 : activeItem);
     }, [location]);
 
-
-    return <div className={`sidebar ${"left_menu"}`}>
+    return <div className='sidebar'>
         <div className="sidebar__logo">
             <img src={images.logo} alt="logo" className='logo'/>
         </div>
@@ -77,13 +75,13 @@ const Sidebar = () => {
                 ref={indicatorRef}
                 className="sidebar__menu__indicator"
                 style={{
-                    transform: `(translateX(-65%) * translateY${activeIndex * stepHeight}px)`
+                    transform: `translateX(-65%) translateY(${activeIndex * stepHeight}px)`
                 }}
             ></div>
             {
                 sidebarNavItems.map((item, index) => (
                     <Link to={item.to} key={index}>
-                        <div className={`sidebar__menu__item ${activeIndex && 'active'}`}>
+                        <div className={`sidebar__menu__item ${activeIndex === index ? 'active' : ''}`}>
                             <div className="sidebar__menu__item__icon">
                                 <img src={item.icon} alt="discount" className='icons'/>
                             </div>

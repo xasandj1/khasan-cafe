@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import "../Css/global.css"
 import { BsChevronDown } from "react-icons/bs"
 import Cards from './Const'
