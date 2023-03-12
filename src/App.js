@@ -9,22 +9,25 @@ import Pie from './pages/Pie';
 import Message from './pages/Message';
 import Settings from './pages/Settings';
 import Logout from './pages/Logout';
+import { NoteProvider } from './components/context/NoteContext';
 
 function App() {
     return (
-        <BrowserRouter>
-            <Routes>
-                <Route path='/' element={<AppLayout />}>
-                    <Route index element={<Home />} />
-                    <Route path='/discount' element={<Discount />} />
-                    <Route path='/pie' element={<Pie />} />
-                    <Route path='/message' element={<Message />} />
-                    <Route path='/ball' element={<Ball />} />
-                    <Route path='/settings' element={<Settings />} />
-                    <Route path='/logout' element={<Logout />} />
-                </Route>
-            </Routes>
-        </BrowserRouter>
+        <NoteProvider>
+            <BrowserRouter>
+                <Routes>
+                    <Route path='/' element={<AppLayout />}>
+                        <Route index element={<Home />} />
+                        <Route path='/discount' element={<Discount />} />
+                        <Route path='/pie' element={<Pie />} />
+                        <Route path='/message' element={<Message />} />
+                        <Route path='/ball' element={<Ball />} />
+                        <Route path='/settings' element={<Settings />} />
+                        <Route path='/logout' element={<Logout />} />
+                    </Route>
+                </Routes>
+            </BrowserRouter>
+        </NoteProvider>
     );
 }
 

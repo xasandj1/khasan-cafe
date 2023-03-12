@@ -1,3 +1,4 @@
+import React, { useContext } from "react"
 import "../pages/Css/global.css"
 import { FiSearch } from "react-icons/fi"
 import { FaShoppingCart } from "react-icons/fa"
@@ -6,32 +7,16 @@ import { RiMenu2Line } from "react-icons/ri"
 import { AiOutlinePlus } from "react-icons/ai"
 import Food from "./Crads/Food";
 import AddButton from "../components/Ul/AddButton"
-import React, { useState } from "react"
 import Button from "../components/Ul/Button"
 import AddMenu from "./AddMenu/AddOrder"
+import Context from "../components/context/NoteContext"
 
 
 
 const Home = () => {
-    const { text, setText } = useState("")
-    const [shop, setShop] = useState(false)
-    const [menu, setMenu] = useState(false)
-    const [price, setPrice] = useState(0)
-    const hendleChange = () => (
-        setPrice(price + 1)   
-    )
-    const menuOpen = () => {
-        setMenu(!menu)
-    }
-    const searchChange = (e) => {
-        setText(e.target.value)
-    }
-   
 
+    const { text, shop, openMenu, searchChange, menu, price, menuOpen, hendleChange } = useContext(Context)
 
-    const openMenu = () => {
-        setShop(!shop)
-    }
     return (
         <header className="header">
             <div className="container">
@@ -43,7 +28,7 @@ const Home = () => {
                             <p className="header-txt">Tuesday, 21 Feb 2023 Developing by XT</p>
                         </div>
                         <div className="header_serachs">
-                            <input placeholder="Search for food, coffe, etc.." className="header-input" value={text} onChange={()=>searchChange} />
+                            <input placeholder="Search for food, coffe, etc.." className="header-input" value={text} onChange={() => searchChange} />
                             <FiSearch className="header_search" />
                         </div>
                     </div>
@@ -72,7 +57,7 @@ const Home = () => {
                             </div>
                             <AddButton classes={`add-btn`}><AiOutlinePlus /></AddButton>
                         </div>
-                        <AddMenu hendleChange={hendleChange} price={price}/>
+                        <AddMenu hendleChange={hendleChange} price={price} />
                     </div>
                 </div>
                 <Food hendleChange={hendleChange} />

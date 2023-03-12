@@ -58,8 +58,7 @@ const Sidebar = () => {
             setStepHeight(sidebarItem.clientHeight);
         }, 50);
     }, []);
-
-    // change active index
+    
     useEffect(() => {
         const curPath = window.location.pathname.split('/')[1];
         const activeItem = sidebarNavItems.findIndex(item => item.section === curPath);
