@@ -381,6 +381,11 @@ button {
     justify-content: center;
     color: #E07153;
     margin-left: 20px;
+    transition: .5s;
+}
+.btn:hover{
+    background: #E07153;
+    color: white;
 }
 
 .order {
@@ -416,7 +421,7 @@ button {
 
 .order-name {
     font-weight: 500;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 130%;
     color: #FFFFFF;
 }
@@ -454,6 +459,7 @@ button {
     display: flex;
     align-items: center;
     margin-top: 20px;
+    padding-bottom: 25px;
 }
 
 .order-info {
@@ -558,4 +564,32 @@ button {
     line-height: 130%;
     color: #ABBBC2;
     margin-top: 10px;
+}
+.total_price{
+    display: flex;
+    flex-direction: column;
+    max-width: 445px;
+    width: 100%;
+    border-top: 1px solid #393C49;
+    padding-top: 25px;
+}
+.total_price-amounts{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.total_price-text{
+font-weight: 400;
+font-size: 18px;
+line-height: 140%;
+color: #ABBBC2;
+}
+.total_price-amount{
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 130%;
+    color: #FFFFFF;
+}
+.total_price-amounts:nth-child(2){
+    margin-top: 15px;
 }

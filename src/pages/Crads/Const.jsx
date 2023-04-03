@@ -1,8 +1,5 @@
 import { images } from "../../components/constants"
 
-// const []
-
-
 const Cards = [
     {
         seafood: images.seafood,
