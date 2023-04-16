@@ -12,7 +12,6 @@ export function NoteProvider({ children }) {
     const orderDlete = () => {
         setRemove(!remove)
     }
-   
     const hendleChange = () => (
         setPrice(price + 1),
         setMoney(money)

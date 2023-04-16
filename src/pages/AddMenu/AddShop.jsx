@@ -4,23 +4,10 @@ import Button from '../../components/Ul/Button'
 import { FiTrash } from "react-icons/fi"
 import "../../pages/Css/global.css"
 import Context from '../../components/context/NoteContext'
+
 const AddShop = () => {
     const { remove, orderDlete, price, hendlChange, money } = useContext(Context)
-    // const [money,setMoney] = useState(2.29)
-    // const getPrice = () =>{
-    //     if (price === "1") {
-    //         return`${price * 2}`;
-    //     }else{
-    //         return '2.29'
-    //     }
-    // }
-    const getPrice = () => {
-        if (price === "1") {
-            return `${money * 1}`;
-        } else if (price === "2") {
-            return `${money * 2}`
-        } 
-    }
+  console.log(`${money === money ? 2.29 : money + 2.29}`);
     return (
         <div>
             <div className="orders_info-top">
@@ -32,7 +19,7 @@ const AddShop = () => {
 
                 <div className="orders_prices">
                     <span className="order_amount" onChange={() => hendlChange()}>{price}</span>
-                    <span className="order-price" onChange={() => getPrice()}>$ {money}</span>
+                    <span className="order-price">$ {`${money < 2.29 ? 2.29 : money + 2.29}`}</span>
                 </div>
             </div>
             <div className="order_bottom">
